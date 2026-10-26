@@ -1,0 +1,826 @@
+# COMPLETE GAME DEVELOPMENT INSTRUCTIONS
+## Professional 3D Ball Adventure Game — Mobile & Desktop Responsive
+
+### 1. Game Overview and Main Concept
+
+Create a complete, professional, highly engaging, smooth, and visually attractive Ball Adventure Game that works perfectly on both mobile phones and desktop or laptop computers. The game should provide an exciting experience in which players control a ball, move it across different platforms, avoid obstacles, collect rewards, unlock new levels, and complete challenging objectives.
+
+The game must feel like a real, polished commercial-quality game rather than a simple demonstration. It should have a complete playable environment, realistic ball movement, responsive controls, interesting challenges, smooth animations, beautiful visual effects, and a fully functional user interface.
+
+The entire game must be playable using touch controls on mobile devices and mouse, keyboard, or other suitable input methods on desktop computers.
+
+The main objective is to give players an enjoyable experience in which they can roll, steer, jump, accelerate, brake, balance, and navigate the ball through carefully designed levels.
+
+The game should be easy for beginners to understand but challenging enough to keep experienced players interested.
+
+### 2. Game Name and Visual Identity
+
+Use the working title **Ball Adventure 3D**. Create a modern game logo featuring a glossy rolling ball, dynamic motion trails, and a clean, attractive font.
+
+The overall visual identity should be colorful, modern, polished, and consistent. Use a combination of beautiful environments, soft lighting, realistic shadows, smooth gradients, and attractive interface elements.
+
+The ball must remain clearly visible against its surroundings at all times. Use contrasting colors for platforms, obstacles, collectible items, checkpoints, and hazards.
+
+The game interface should look professional on every screen size. Buttons must have clear labels, recognizable icons, comfortable spacing, and satisfying interaction feedback.
+
+Avoid unnecessary visual clutter. Every element should serve a clear purpose.
+
+### 3. Main Menu and Start Screen
+
+When the game loads, display an attractive main menu with a beautifully rendered ball positioned in the center of the screen.
+
+The ball should have a subtle idle animation, such as gently bouncing, slowly rotating, or moving from side to side. Add a visually appealing environment in the background, with animated lights, floating particles, or slowly moving decorative objects.
+
+Include the following functional menu options:
+
+- **Play:** Start a new game or continue from the last unlocked level.
+- **Level Selection:** Open a level-selection screen showing unlocked and locked levels.
+- **Ball Skins:** Allow players to preview and select different ball designs.
+- **Shop:** Display available cosmetic items and unlockable rewards.
+- **Settings:** Open audio, graphics, control, and accessibility settings.
+- **How to Play:** Explain movement, jumping, braking, collecting rewards, and avoiding obstacles.
+- **Achievements:** Show completed objectives and earned achievements.
+- **Pause:** Make the pause system available during gameplay.
+- **Restart:** Allow the current level to be restarted.
+- **Home:** Return to the main menu with appropriate confirmation if progress could be lost.
+
+Every menu button must work correctly. Do not create decorative buttons that appear functional but do nothing.
+
+When a player selects Play, transition smoothly from the menu into the selected game level. Use a short animation or fade transition rather than abruptly replacing the entire screen.
+
+### 4. Ball Design and Customization
+
+Create a high-quality 3D ball that looks attractive from every viewing angle.
+
+The ball should feature a smooth, rounded surface, realistic highlights, soft reflections, appropriate shadows, and a visible sense of weight. Its material can be glossy, metallic, rubber-like, glowing, or patterned depending on the selected skin.
+
+Provide several ball styles, such as:
+
+1. Classic glossy ball.
+2. Neon energy ball.
+3. Metallic silver ball.
+4. Golden reward ball.
+5. Rainbow ball.
+6. Galaxy-patterned ball.
+7. Fire-themed ball.
+8. Ice-themed ball.
+9. Electric blue ball.
+10. Premium crystal ball.
+
+Allow players to unlock additional skins by collecting coins, completing challenges, or progressing through levels.
+
+Skin selection should change the ball's appearance without accidentally changing its movement speed, jump height, or other competitive properties. If special abilities are introduced, explain them clearly and balance them appropriately.
+
+The ball should rotate naturally in the direction of movement. Rotation speed should correspond to movement speed, and the ball should stop rotating or slow down naturally when the ball comes to rest.
+
+Add subtle particle trails for selected skins. Make these effects configurable so that they do not reduce performance on low-powered mobile devices.
+
+### 5. Core Ball Movement and Physics
+
+The ball's movement system is one of the most important parts of the game. Implement a reliable physics-based controller that makes the ball feel responsive, smooth, and predictable.
+
+The movement system should support:
+
+- Forward movement.
+- Backward movement.
+- Left and right steering.
+- Acceleration and deceleration.
+- Natural rolling and rotation.
+- Controlled braking.
+- Jumping.
+- Airborne steering.
+- Landing and bouncing.
+- Slopes and ramps.
+- Moving platforms.
+- Collision detection.
+- Falling and recovery.
+- Checkpoint respawning.
+
+Use a suitable physics engine or the game engine's built-in rigid-body physics. Configure mass, friction, restitution, gravity, drag, and collision response carefully.
+
+The ball should not slide uncontrollably across ordinary surfaces. At the same time, it should not feel so heavy that the player cannot make quick adjustments.
+
+Use acceleration-based movement rather than instantly setting the ball to its maximum speed. Apply appropriate damping to reduce unwanted movement when the player releases the controls.
+
+Different surfaces should influence movement. For example, ice should reduce friction, sticky surfaces should slow the ball, boost pads should increase speed, and bouncy platforms should create a stronger rebound.
+
+Prevent the ball from becoming trapped inside platforms, passing through solid obstacles, or gaining unpredictable speed after collisions.
+
+Use a fixed or appropriately stabilized physics timestep where supported. Avoid frame-rate-dependent physics calculations so that the gameplay remains consistent on different devices.
+
+### 6. Mobile Touch Controls
+
+Create a dedicated touch-control system designed for smartphones and tablets.
+
+The controls must be easy to use with one or two thumbs, depending on the selected control scheme. Buttons should be large enough to tap accurately and should remain comfortably separated to avoid accidental inputs.
+
+Provide at least two control modes.
+
+**Mode A: Virtual Joystick**
+
+Place a virtual joystick on the lower-left side of the screen. The player can press and drag the joystick in any direction to control movement.
+
+- Drag upward to move forward.
+- Drag downward to move backward or slow down, depending on the selected control configuration.
+- Drag left to steer left.
+- Drag right to steer right.
+- Allow diagonal movement.
+- Return the joystick smoothly to its neutral position when the player releases it.
+- Use a visible outer ring and movable inner handle.
+- Support touch movement even when the finger moves outside the original joystick area.
+- Reset the joystick correctly when the touch ends or is cancelled.
+
+**Mode B: Hold-and-Drag Controls**
+
+Provide an optional drag-based control mode in which the player presses and holds a designated control area, then drags a finger to steer the ball.
+
+The direction and distance of the drag should control the direction and intensity of movement. Apply a configurable dead zone so that tiny finger movements do not cause unwanted steering.
+
+The control response should be smooth, with enough sensitivity for precise platform navigation.
+
+Do not allow the game camera to interfere with active movement touches. Track each touch identifier separately and assign each active touch to its intended control.
+
+### 7. Dedicated Mobile Action Buttons
+
+Place the action buttons on the lower-right side of the mobile screen.
+
+Include the following controls:
+
+**Jump Button:** Press to jump. Support a short press for a normal jump and, if desired, a longer hold for a slightly higher jump. Apply a maximum hold duration so that the player cannot jump infinitely.
+
+**Brake Button:** Hold to slow down the ball. Braking should reduce speed smoothly rather than stopping the ball instantly.
+
+**Boost Button:** Hold or tap to activate a temporary speed boost when the ability is available. Show the remaining boost energy through a visible meter.
+
+**Special Ability Button:** Activate a level-specific or ball-specific ability when available.
+
+**Pause Button:** Pause gameplay and open the pause menu.
+
+Buttons must provide immediate visual feedback when pressed. For example, a button may slightly scale down, brighten, or display a subtle glow.
+
+Ensure that holding Jump or Boost does not accidentally trigger multiple unwanted actions. Apply appropriate cooldowns and input rules.
+
+Allow players to reposition or resize controls through the settings menu if the selected layout supports customization.
+
+### 8. Desktop and Laptop Controls
+
+Provide a complete keyboard and mouse control system for desktop users.
+
+Use the following default keyboard layout:
+
+- **W / Up Arrow:** Move forward.
+- **S / Down Arrow:** Move backward.
+- **A / Left Arrow:** Steer left.
+- **D / Right Arrow:** Steer right.
+- **Spacebar:** Jump.
+- **Shift:** Activate boost.
+- **Ctrl:** Brake.
+- **E:** Activate a special ability, if available.
+- **Esc:** Pause or resume the game.
+
+Allow players to use either WASD or the arrow keys without requiring them to change settings.
+
+Support simultaneous key presses. For example, the player should be able to move forward while steering left and preparing to jump.
+
+Implement reliable keyboard input tracking. Clear active key states when the browser window loses focus to prevent the ball from continuing to move unexpectedly.
+
+For mouse controls, support an optional click-and-drag movement system. Players should be able to click and hold within a designated control area, drag to steer, and release to reduce input.
+
+If the camera supports mouse control, allow users to rotate or adjust the view with a clearly defined mouse gesture. Do not make ordinary camera movement conflict with clicking UI buttons.
+
+When the player clicks a menu button, the click must not accidentally move the ball in the game world.
+
+Display a compact control guide when the game first starts. Allow players to reopen it from the pause menu.
+
+### 9. Camera System
+
+Implement a smooth third-person camera that follows the ball throughout the level.
+
+The camera should maintain a comfortable distance and viewing angle so that players can see upcoming platforms, obstacles, ramps, and collectibles.
+
+Use smooth camera interpolation to avoid sudden movements. The camera should follow the ball without excessive shaking or lag.
+
+Include the following camera features:
+
+- Automatic tracking.
+- Smooth horizontal rotation where appropriate.
+- Adjustable camera sensitivity.
+- Optional camera inversion.
+- Adjustable camera distance.
+- Collision avoidance when walls or objects obstruct the view.
+- A controlled landing view when jumping from high platforms.
+- Gentle camera effects during boosts.
+- Optional subtle camera shake during major impacts.
+- A camera reset option.
+
+Camera shake must be subtle and optional. Do not make it so strong that players lose sight of the ball or experience unnecessary discomfort.
+
+On mobile devices, keep camera gestures separate from joystick and action-button touches. On desktop, support a mouse gesture or dedicated camera control if appropriate.
+
+### 10. Level Design and World Structure
+
+Create a series of increasingly challenging levels. Each level should introduce a new mechanic or combine familiar mechanics in a more interesting way.
+
+The starting level should be simple and act as an interactive tutorial. Teach the player how to move, steer, jump, collect coins, avoid obstacles, and reach the finish line.
+
+Design multiple themed worlds, such as:
+
+**World 1 — Green Valley:** Wide platforms, simple ramps, basic jumps, and easy collectible paths.
+
+**World 2 — Sky Platforms:** Floating platforms, narrow bridges, moving platforms, and larger gaps.
+
+**World 3 — Ice World:** Slippery surfaces, icy slopes, frozen obstacles, and careful braking challenges.
+
+**World 4 — Neon City:** Glowing tracks, speed boosters, rotating barriers, and moving platforms.
+
+**World 5 — Lava Challenge:** Dangerous surfaces, timed jumps, falling platforms, and precision movement.
+
+**World 6 — Space Adventure:** Low-gravity sections, floating platforms, launch pads, and unusual movement challenges.
+
+**World 7 — Master Challenge:** A combination of previously introduced mechanics with more demanding obstacle sequences.
+
+Each world should have a consistent visual theme, its own background, lighting style, platform materials, music, and obstacle designs.
+
+Levels should be handcrafted or procedurally generated with guaranteed playability. Every required jump must be achievable with the available movement and jump mechanics.
+
+Avoid creating levels that require impossible precision, depend on random unfair outcomes, or trap the player permanently without a recovery option.
+
+### 11. Platforms, Ramps, and Paths
+
+Build a variety of surfaces that make movement interesting.
+
+Include wide platforms for beginners, narrow platforms for precision, curved paths for flowing movement, ramps for jumps, elevated bridges, rotating platforms, moving platforms, collapsing platforms, and temporary platforms that disappear after contact.
+
+Use clear visual indicators to distinguish safe surfaces from dangerous ones.
+
+Moving platforms should follow predictable paths. Their movement speed and direction should be understandable before the player attempts to land on them.
+
+Collapsing platforms should provide a brief warning, such as a crack animation or flashing surface, before disappearing.
+
+Ramps should generate natural movement and launch the ball only when the geometry and speed support a jump. Avoid unexpected launches from small decorative bumps.
+
+Give players enough time and space to understand the upcoming route.
+
+### 12. Obstacles and Hazards
+
+Introduce obstacles that challenge timing, steering, and speed control.
+
+Include:
+
+- Rotating bars.
+- Moving walls.
+- Spinning hammers.
+- Sliding blocks.
+- Falling objects.
+- Narrow bridges.
+- Gaps between platforms.
+- Timed gates.
+- Moving laser barriers.
+- Breakable obstacles.
+- Bouncing obstacles.
+- Rolling hazard balls.
+- Temporary disappearing paths.
+- Slippery ice sections.
+- Speed-sensitive ramps.
+
+Every obstacle must have clear collision boundaries and predictable behavior.
+
+Use animation, color, sound, or movement patterns to communicate when an obstacle is dangerous.
+
+For example, a rotating hammer should follow a consistent rotation pattern, while a timed gate should display a visual cue before opening or closing.
+
+When the player collides with a hazard, apply a fair consequence. Depending on the level, this may mean losing a life, returning to the most recent checkpoint, or restarting the challenge.
+
+Do not immediately reset the player for harmless contact with decorative objects.
+
+### 13. Collectibles, Coins, and Rewards
+
+Place collectible coins, gems, stars, and other rewards throughout each level.
+
+Coins should be easy to identify and should stand out visually from the environment.
+
+When the ball collects a coin, play a short collection animation, display a small particle burst, and update the coin counter immediately.
+
+Place some rewards along the main route and others in optional areas that require skillful movement.
+
+Add special collectibles, such as:
+
+- Three hidden stars in each level.
+- Rare gems in difficult locations.
+- Bonus coins on alternate routes.
+- Timed reward objects.
+- Secret collectibles hidden behind obstacles.
+
+Use collected coins to unlock cosmetic ball skins, visual trails, and other appropriate rewards.
+
+Store earned progress reliably so that players do not lose their rewards when they close or refresh the game, provided persistent storage is available.
+
+Do not require payment for basic gameplay. The core experience should remain enjoyable without purchases.
+
+### 14. Scoring and Performance Rating
+
+Implement a scoring system that rewards successful and skillful play.
+
+Players can earn points for completing levels, collecting coins, finding hidden stars, finishing quickly, reaching optional areas, and completing challenges without falling.
+
+Calculate the final score from clear, consistent rules. Avoid subtracting points for actions the player could not reasonably predict.
+
+Display the score in a readable HUD during gameplay.
+
+At the end of each level, show:
+
+- Total score.
+- Coins collected.
+- Stars earned.
+- Completion time.
+- Number of falls or failed attempts, if relevant.
+- Personal best.
+- Final rating.
+
+Use a one-, two-, or three-star rating system. Make the requirements visible before or during the level whenever possible.
+
+Offer a Retry button, a Next Level button when unlocked, and a Home button.
+
+### 15. Lives, Falling, and Respawning
+
+The ball must react correctly when it falls from the platform or enters a designated hazard zone.
+
+Create a clear out-of-bounds detection system. When the ball falls too far below the level, trigger a short falling animation or visual effect, then respawn it at the most recent checkpoint.
+
+If no checkpoint has been reached, respawn the player at the level's starting point.
+
+Provide a brief recovery delay to prevent repeated immediate falls after respawning.
+
+Reset the ball's position, velocity, angular velocity, and temporary movement effects when appropriate. Ensure that the ball does not respawn with leftover momentum that immediately pushes it off the platform again.
+
+Preserve legitimate progress, such as previously collected permanent rewards, according to the selected game rules.
+
+Show a brief message such as “Checkpoint Reached” when a checkpoint is activated.
+
+If a level uses limited lives, clearly display the remaining lives and explain what happens when they run out.
+
+For the standard mode, prefer checkpoint-based recovery so that players are encouraged to keep trying instead of becoming frustrated by repeated full-level restarts.
+
+### 16. Checkpoints and Level Completion
+
+Place checkpoints at reasonable intervals, particularly after difficult obstacle sequences.
+
+A checkpoint should activate when the ball enters its trigger area. Change its appearance, play a subtle sound, and save the relevant recovery position.
+
+Ensure that checkpoint positions are located on stable, safe platforms.
+
+Each level must have a clearly marked finish area. When the player reaches it, trigger a level-completion sequence.
+
+The completion sequence may include a short camera movement, a glowing finish effect, celebratory particles, a victory sound, and a results panel.
+
+Prevent the player from accidentally triggering the completion event multiple times.
+
+Save the unlocked-level state and relevant results after successful completion.
+
+### 17. Power-Ups and Special Abilities
+
+Add optional power-ups to make the game more engaging.
+
+**Speed Boost:** Temporarily increases movement speed. Use a visible duration indicator and prevent uncontrolled acceleration.
+
+**High Jump:** Increases jump height for a limited period.
+
+**Shield:** Protects the ball from a limited number of hazards.
+
+**Magnet:** Attracts nearby coins within a defined radius.
+
+**Slow Motion:** Temporarily slows selected moving hazards while preserving reliable player controls.
+
+**Extra Life:** Grants an additional life in modes that use lives.
+
+**Checkpoint Token:** Activates a recovery point where the game rules permit it.
+
+Give each power-up a recognizable icon, a short explanation, and clear activation feedback.
+
+Use cooldowns or limited durations to keep abilities balanced.
+
+Power-ups must not permanently alter the ball's movement unless the player has explicitly selected a game mode designed for that purpose.
+
+### 18. Game Modes
+
+Provide multiple game modes that reuse the core movement system.
+
+**Adventure Mode:** Progress through themed worlds and increasingly difficult levels.
+
+**Time Trial:** Complete a level as quickly as possible.
+
+**Coin Hunt:** Collect a required number of coins before reaching the finish.
+
+**Endless Run:** Travel across continuously generated platforms while avoiding hazards and collecting rewards.
+
+**Challenge Mode:** Complete special tasks such as reaching a destination without jumping or collecting a set of items within a time limit.
+
+**Practice Mode:** Explore a level with generous checkpoints and reduced penalties.
+
+Each mode should have its own objective, rules, and results display.
+
+Endless mode must generate platforms that are reachable and appropriate for the current difficulty. Avoid generating impossible gaps, overlapping obstacles, or unavoidable collisions.
+
+### 19. User Interface and Heads-Up Display
+
+During gameplay, display a clean and readable HUD containing the information the player needs.
+
+Include:
+
+- Current level name or number.
+- Coin counter.
+- Current score.
+- Progress indicator.
+- Active power-up status.
+- Boost energy meter.
+- Remaining lives, where applicable.
+- Pause button.
+- Optional timer.
+- Checkpoint notification.
+
+Position elements carefully so that they do not cover the ball, narrow platforms, or important parts of the path.
+
+On mobile screens, reserve space for touch controls and keep text large enough to read without zooming.
+
+On desktop screens, use the available space more efficiently without stretching interface elements unnaturally.
+
+Use consistent spacing, font sizes, icon styles, and button states across all menus.
+
+Include clear hover feedback for desktop buttons and touch feedback for mobile buttons.
+
+### 20. Pause Menu and Game Settings
+
+When the player presses the Pause button or Esc, pause the actual gameplay simulation.
+
+The pause menu should contain:
+
+- Resume.
+- Restart Level.
+- Control Settings.
+- Sound Settings.
+- Graphics Settings.
+- How to Play.
+- Return to Main Menu.
+
+Display a confirmation dialog before restarting or leaving a level if unsaved progress may be affected.
+
+The pause system must freeze the ball, moving obstacles, gameplay timers, active power-ups, and other gameplay-related systems.
+
+The user interface should remain interactive while the game is paused.
+
+Do not allow background physics or timers to continue unintentionally.
+
+Provide separate settings for music volume, sound effects, camera sensitivity, control sensitivity, graphics quality, and visual effects.
+
+Save user preferences where persistent storage is supported.
+
+### 21. Sound Effects and Background Music
+
+Create a complete audio experience that complements the gameplay.
+
+Include sound effects for:
+
+- Ball rolling.
+- Jumping.
+- Landing.
+- Collecting coins.
+- Activating checkpoints.
+- Using boosts.
+- Colliding with hazards.
+- Unlocking rewards.
+- Completing levels.
+- Opening menus.
+- Clicking buttons.
+
+Use different sounds for different events, but avoid making repeated actions noisy or irritating.
+
+Background music should match each world's theme. For example, use calm, cheerful music for beginner levels, energetic music for obstacle courses, and atmospheric music for space environments.
+
+Provide independent volume controls for music and sound effects.
+
+Allow players to mute all sound.
+
+On mobile browsers, initialize audio after the player's first permitted interaction if required by browser autoplay restrictions.
+
+Stop or appropriately suspend gameplay audio when the game is paused, and resume it correctly when the player returns.
+
+### 22. Animations and Visual Effects
+
+Make the game feel alive through polished animations and subtle effects.
+
+Include:
+
+- Natural ball rotation.
+- Smooth acceleration and deceleration.
+- Small landing compression or bounce.
+- Jump trails.
+- Boost particles.
+- Coin collection effects.
+- Glowing checkpoints.
+- Obstacle animations.
+- Button interaction feedback.
+- Level transition effects.
+- Victory celebrations.
+- Unlock animations.
+
+Use effects to reinforce important events rather than distract from gameplay.
+
+The ball should remain easy to track during fast movement.
+
+Avoid excessive screen flashes, strong camera shaking, and large particle effects that hide hazards.
+
+Provide options to reduce visual effects and camera shake.
+
+### 23. Mobile, Tablet, Laptop, and Desktop Responsiveness
+
+The game must adapt intelligently to different screen sizes and input devices.
+
+**Mobile phones:** Use a compact layout, large touch targets, a virtual joystick or drag-based control system, dedicated action buttons, and a camera that keeps the upcoming path visible.
+
+**Tablets:** Increase the visible play area while maintaining comfortable control spacing. Adapt the HUD to wider screens without making touch controls too small.
+
+**Laptops:** Support keyboard controls, mouse interaction, readable menus, and a stable camera. Make efficient use of the available viewport.
+
+**Desktop monitors:** Support high-resolution displays, larger viewing areas, keyboard input, optional mouse camera control, and scalable UI.
+
+Use responsive layouts rather than fixed pixel dimensions for the entire game interface.
+
+Account for mobile browser safe areas, notches, and rounded screen corners where applicable.
+
+Handle portrait and landscape orientation thoughtfully. Landscape mode may be the preferred gameplay layout, but the game should show a clear rotation suggestion or adapt its controls when portrait mode is supported.
+
+Resizing the browser window must not break the game, stretch the ball, hide essential buttons, or distort the camera.
+
+The rendering resolution should adapt to device capability. Use a suitable device-pixel-ratio limit to balance sharp visuals and performance.
+
+### 24. Smooth Performance and Optimization
+
+Prioritize stable, responsive gameplay on a wide range of supported devices.
+
+Aim for 60 frames per second on capable devices, while allowing the game to remain playable at lower frame rates on less powerful hardware.
+
+Optimize rendering, collision detection, physics calculations, particle systems, lighting, and object management.
+
+Use object pooling for frequently reused objects such as coins, particles, and temporary effects where appropriate.
+
+Avoid unnecessary repeated object creation during gameplay.
+
+Limit the number of dynamic lights, expensive shadows, transparent effects, and high-resolution textures on mobile devices.
+
+Provide graphics quality options such as Low, Medium, and High.
+
+The Low setting should reduce expensive visual effects without disabling essential gameplay features.
+
+Avoid memory leaks caused by repeated level loading, abandoned event listeners, or undisposed game objects.
+
+Pause or reduce unnecessary processing when the game is hidden in the background.
+
+Use efficient collision layers so that decorative objects do not participate in expensive or unnecessary physics calculations.
+
+The game must remain responsive during fast movement, collisions, respawning, level transitions, and menu navigation.
+
+### 25. Loading Screen and Asset Management
+
+Create a professional loading screen featuring the game logo, a progress indicator, and a short gameplay tip.
+
+Load essential assets first so that the player can enter the game without waiting for every optional cosmetic asset.
+
+Display real loading progress where the underlying engine supports it. Do not show a fake progress bar that remains stuck or claims loading is complete before the required assets are ready.
+
+Handle missing or failed assets gracefully. Show a clear error message and offer a retry option when a critical resource cannot load.
+
+Use appropriate texture sizes, compressed assets, optimized 3D models, and efficient audio formats.
+
+Preload or prepare assets for the next level when it improves the experience without exhausting device memory.
+
+Ensure that the game can recover from a temporary loading failure without forcing the player to reload the entire application unnecessarily.
+
+### 26. Save System and Player Progress
+
+Create a reliable save system for unlocked levels, earned coins, selected skins, achievements, personal bests, and user settings.
+
+Use browser storage, IndexedDB, or an appropriate persistence mechanism depending on the game's architecture.
+
+Save important progress after completing a level, unlocking an item, or changing a permanent preference.
+
+Do not overwrite valid saved data with empty defaults during initialization.
+
+Validate saved data before loading it, and provide reasonable defaults if the data is missing or invalid.
+
+If storage is unavailable, allow the game to continue in session-only mode and explain that progress may not persist after closing the game.
+
+Keep the save system independent of the movement and physics systems so that saving does not interrupt gameplay.
+
+If cloud saves are not implemented, do not claim that progress is synchronized across devices.
+
+### 27. Accessibility and Comfort
+
+Make the game accessible to as many players as reasonably possible.
+
+Include adjustable control sensitivity, configurable sound levels, readable text, clear contrast, and optional reduced-motion settings.
+
+Allow players to disable strong camera shake, intense particle effects, and unnecessary flashing.
+
+Use recognizable icons and labels rather than relying exclusively on color to communicate important information.
+
+Provide a control tutorial that can be replayed at any time.
+
+Make interactive elements easy to reach on mobile devices.
+
+Support keyboard navigation for menus where practical.
+
+Keep essential gameplay information readable without requiring perfect color perception or precise hearing.
+
+Avoid excessively small text, tightly packed controls, and interactions that require unnatural finger positions.
+
+### 28. Tutorial and First-Time Experience
+
+The first level should teach the game naturally through short interactive steps.
+
+Start by asking the player to move the ball across a wide, safe platform.
+
+Next, introduce steering, jumping over a small gap, collecting coins, braking near an edge, and reaching a checkpoint.
+
+Explain each action using a short message displayed near the relevant control.
+
+Allow the player to complete each tutorial action before introducing the next mechanic.
+
+Include Skip Tutorial and Replay Tutorial options.
+
+The tutorial should explain both keyboard and touch controls according to the active input device.
+
+Do not display all instructions at once. Teach the player gradually to avoid overwhelming beginners.
+
+### 29. Achievements and Long-Term Engagement
+
+Add achievements that reward exploration, skill, and consistent progress.
+
+Example achievements include:
+
+- First Roll: Complete the first level.
+- Coin Collector: Collect a specified number of coins.
+- Perfect Landing: Land safely on a narrow platform.
+- Speed Master: Complete a time-trial target.
+- Explorer: Discover a hidden route.
+- No Falling: Complete a level without falling.
+- World Champion: Finish an entire world.
+- Skin Collector: Unlock several ball designs.
+
+Display achievement progress and celebrate completed achievements with a small notification.
+
+Add optional daily challenges only if the game has a reliable way to manage dates and save progress. Do not display misleading countdowns or pretend that online rewards are available without a real implementation.
+
+The game should remain enjoyable without requiring daily play, an internet connection, or purchases.
+
+### 30. Optional Multiplayer and Competitive Features
+
+Design the core game so that multiplayer can be added later without rewriting the movement system.
+
+Possible future features include local split-screen play, ghost replays, leaderboard challenges, and online races.
+
+However, do not display nonfunctional multiplayer buttons or fake online rankings.
+
+Real online multiplayer requires a suitable networking architecture, synchronization, server or peer communication, and appropriate handling of disconnects.
+
+If multiplayer is not implemented, focus on making the single-player adventure complete and polished.
+
+Optional ghost replays may show a previous best run if the game records and reproduces movement data reliably.
+
+### 31. Collision Detection and Gameplay Reliability
+
+Use reliable collision shapes and carefully configured collision layers.
+
+The ball must collide with solid platforms, obstacles, and boundaries as intended.
+
+Prevent the ball from passing through thin obstacles at high speed. Use continuous collision detection or another appropriate method when supported by the physics engine.
+
+Use trigger volumes for collectibles, checkpoints, finish lines, and out-of-bounds areas.
+
+Make collectible events idempotent so that one coin cannot be collected multiple times because of repeated collision callbacks.
+
+Prevent the same checkpoint, victory screen, or failure sequence from activating repeatedly during one event.
+
+Handle cases in which the player pauses during a jump, loses browser focus, changes screen orientation, or returns from a background tab.
+
+After restarting a level, reset the appropriate game state, temporary effects, obstacle positions, timers, and player physics.
+
+After loading a new level, remove old level objects and listeners to prevent duplicate gameplay behavior.
+
+### 32. User Experience and Professional Polish
+
+Every action should have a clear and satisfying response.
+
+When the player presses a button, provide immediate feedback. When the ball jumps, make the movement visually understandable. When the player collects a reward, update the counter instantly. When the player fails, explain the recovery option clearly.
+
+Keep transitions smooth and avoid unnecessary delays.
+
+Use consistent terminology across all menus.
+
+Ensure that the pause menu, settings, shop, level selection, skin selection, achievements, and results screen all follow the same design system.
+
+Make sure that the game remains playable even if the player skips optional features such as skins, power-ups, or achievements.
+
+Do not let decorative features take priority over movement quality, collision accuracy, level readability, or input responsiveness.
+
+### 33. Technical Architecture and Implementation
+
+Build the game using a suitable technology stack for the intended deployment.
+
+For a browser-based 3D game, a WebGL-based engine or a well-supported JavaScript 3D framework may be appropriate. Select a physics engine compatible with the chosen rendering and deployment approach.
+
+Separate the implementation into logical systems:
+
+- Game initialization and asset loading.
+- Player and ball controller.
+- Physics and collision handling.
+- Camera controller.
+- Input manager.
+- Touch controls.
+- Keyboard and mouse controls.
+- Level manager.
+- Obstacle manager.
+- Collectible manager.
+- Checkpoint and respawn manager.
+- Scoring and achievement manager.
+- User interface manager.
+- Audio manager.
+- Save and settings manager.
+- Performance and graphics settings.
+
+Keep movement logic independent of the UI. The joystick should send movement input to the player controller rather than directly modifying arbitrary object positions.
+
+Use a single authoritative game state to manage whether the game is in the main menu, loading, playing, paused, failed, or completed.
+
+Prevent incompatible states from running simultaneously. For example, the player should not continue moving during a fully paused state or trigger a victory sequence after a failure state has already been activated.
+
+Use clean, maintainable code, meaningful variable names, reusable components, and appropriate error handling.
+
+### 34. Testing and Quality Assurance
+
+Test the game thoroughly on both desktop and mobile devices.
+
+Verify the following:
+
+1. The main menu loads and all menu buttons work.
+2. The ball moves smoothly in every supported direction.
+3. Keyboard controls work individually and simultaneously.
+4. Mouse controls do not interfere with UI interactions.
+5. Mobile joystick controls respond accurately.
+6. Hold-and-drag controls behave consistently.
+7. Jumping and landing work on different surfaces.
+8. The ball collides correctly with obstacles.
+9. Coins are collected only once.
+10. Checkpoints save the correct respawn location.
+11. Falling triggers the correct recovery behavior.
+12. Level completion unlocks the next level correctly.
+13. Pause freezes gameplay and Resume restores it.
+14. Restart resets the correct game state.
+15. Audio controls work correctly.
+16. Screen resizing does not break the layout.
+17. Portrait and landscape layouts behave as designed.
+18. Low graphics settings improve performance where necessary.
+19. Progress is saved and restored correctly when supported.
+20. The game can recover from common input and loading errors.
+
+Test using different screen resolutions, touch inputs, keyboard layouts, and frame rates.
+
+Pay special attention to edge cases such as holding multiple buttons, releasing a touch outside a control, losing browser focus, rapidly pressing Restart, and falling while using a boost.
+
+Do not consider the game complete until the main gameplay loop and all essential controls work reliably.
+
+### 35. Final Delivery Requirements
+
+Deliver a complete, playable, polished Ball Adventure Game rather than a static mockup or a collection of disconnected screens.
+
+The finished game must include:
+
+- A functional main menu.
+- A fully controllable rolling ball.
+- Responsive mobile touch controls.
+- Desktop keyboard and mouse controls.
+- Smooth movement and reliable physics.
+- A functional third-person camera.
+- Multiple levels and obstacles.
+- Collectibles, coins, and scoring.
+- Checkpoints and respawning.
+- Pause, resume, restart, and level completion.
+- Settings for controls, sound, and graphics.
+- Responsive layouts for mobile, tablet, laptop, and desktop.
+- Optimized performance and asset loading.
+- Persistent progress where supported.
+- Clear instructions and a playable tutorial.
+- Proper error handling and reliable game-state management.
+
+Every essential button, control, level transition, and gameplay feature must be implemented and tested.
+
+Do not use placeholder functionality for essential game mechanics. Do not leave major features as unfinished TODO items. If a complex optional feature cannot be implemented in the selected environment, omit it cleanly or label it as a future feature rather than pretending it works.
+
+The game should open quickly, look attractive, feel responsive, and provide a satisfying experience from the first movement to the final level.
+
+### Final Objective
+
+Create a professional, visually impressive, highly responsive, and genuinely playable Ball Adventure Game that combines satisfying rolling physics, intuitive controls, interesting obstacles, rewarding progression, smooth animations, beautiful environments, and reliable performance.
+
+The game must be equally thoughtful about mobile touch interaction and desktop keyboard or mouse interaction. Prioritize smooth gameplay, precise controls, fair level design, clean UI, and genuine functionality above unnecessary complexity.
+
+The final result should feel like a complete, carefully designed game that players can enjoy repeatedly, improve their skills in, unlock rewards from, and confidently play on both phones and computers.

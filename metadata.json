@@ -1,0 +1,6 @@
+{
+  "name": "Ball Adventure 3D",
+  "description": "An action-packed 3D ball platformer and obstacle adventure featuring realistic rolling physics, multiple themed worlds, custom ball skins, power-ups, and smooth mobile touch and desktop controls.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
